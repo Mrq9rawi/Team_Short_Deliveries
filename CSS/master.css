@@ -60,7 +60,7 @@ body {
 }
 
 /* Start Components */
-.spical_title {
+.special_title {
 	width: 100%;
 	padding: 20px;
 	background-color: var(--secondaryColor);
@@ -72,7 +72,7 @@ body {
 	margin-bottom: 50px;
 }
 
-.spical_title>p {
+.special_title>p {
 	font-size: 30px;
 	color: white;
 }
