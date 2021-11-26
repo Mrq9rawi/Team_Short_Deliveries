@@ -1,0 +1,173 @@
+/* Variables  Start */
+:root {
+	--mainColor: #44CB67;
+	--BCcolor: #FBF4E9;
+	--secondaryColor: #6A7464;
+	--mainPadding: 75px;
+	--productsBorder: #B38AA6;
+}
+
+/* Variable End */
+
+/* Start Global Rules */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--BCcolor);
+}
+
+/* End Global Rules */
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+/* Start Components */
+/* End Components */
+
+/* Header Start */
+header {
+	padding-top: 20px;
+}
+
+header nav {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+header img {
+	width: 230px;
+	height: 130px;
+	background-color: var(--mainColor)
+}
+
+nav>div {
+	flex: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+nav>div .fas.fa-bars {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	nav>div {
+		justify-content: flex-end;
+	}
+
+	nav>div .fas.fa-bars {
+		display: block;
+	}
+}
+
+nav>div ul {
+	list-style-type: none;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+
+}
+
+nav>div .reg {
+	gap: 5px;
+}
+
+
+nav ul li {
+	font-size: 25px;
+}
+
+nav>div .reg li {
+	font-size: 12px;
+}
+
+@media (max-width: 991px) {
+	nav ul li {
+		font-size: 20px;
+	}
+
+	nav>div .reg li {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	nav>div ul {
+		display: none;
+	}
+
+	nav>div .fas.fa-bars:hover+ul,
+	nav>div .fas.fa-bars:hover+ul+ul {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	nav>div .fas.fa-bars:hover+ul+ul {
+		top: 243%;
+	}
+
+	nav>div ul li {
+		padding-top: 25px;
+	}
+
+	nav>div .reg li {
+		font-size: 20px;
+	}
+
+	nav>div ul .pip-line {
+		display: none;
+	}
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+nav ul li a:hover {
+	color: var(--mainColor);
+}
+
+/* Header End */
