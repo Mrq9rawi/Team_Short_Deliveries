@@ -1,10 +1,11 @@
 /* Variables  Start */
 :root {
 	--mainColor: #44CB67;
-	--BCcolor: #FBF4E9;
+	--BCcolor: rgb(251, 244, 233, 70%);
 	--secondaryColor: #6A7464;
-	--mainPadding: 75px;
 	--productsBorder: #B38AA6;
+	--mainPadding: 75px;
+	--mainBroderRadius: 10px;
 }
 
 /* Variable End */
@@ -59,6 +60,23 @@ body {
 }
 
 /* Start Components */
+.spical_title {
+	width: 100%;
+	padding: 20px;
+	background-color: var(--secondaryColor);
+	border-radius: var(--mainBroderRadius);
+	-webkit-border-radius: var(--mainBroderRadius);
+	-moz-border-radius: var(--mainBroderRadius);
+	-ms-border-radius: var(--mainBroderRadius);
+	-o-border-radius: var(--mainBroderRadius);
+	margin-bottom: 50px;
+}
+
+.spical_title>p {
+	font-size: 30px;
+	color: white;
+}
+
 /* End Components */
 
 /* Header Start */
@@ -75,7 +93,11 @@ header nav {
 header img {
 	width: 230px;
 	height: 130px;
-	background-color: var(--mainColor)
+	border-radius: var(--mainBroderRadius);
+	-webkit-border-radius: var(--mainBroderRadius);
+	-moz-border-radius: var(--mainBroderRadius);
+	-ms-border-radius: var(--mainBroderRadius);
+	-o-border-radius: var(--mainBroderRadius);
 }
 
 nav>div {
@@ -103,7 +125,6 @@ nav>div ul {
 	display: flex;
 	gap: 20px;
 	align-items: center;
-
 }
 
 nav>div .reg {
@@ -142,14 +163,32 @@ nav>div .reg li {
 		top: 100%;
 		width: 100%;
 		text-align: center;
+		z-index: 2;
+		background-color: var(--BCcolor);
 	}
 
 	nav>div .fas.fa-bars:hover+ul+ul {
-		top: 243%;
+		top: 243.5%;
+		z-index: 1;
 	}
 
 	nav>div ul li {
 		padding-top: 25px;
+		position: relative;
+	}
+
+	nav>div ul li:not(.reg li:last-child):after {
+		content: "";
+		background-color: black;
+		width: 100%;
+		height: 3px;
+		position: absolute;
+		bottom: -12.5px;
+		left: 0;
+	}
+
+	nav>div ul .pip-line+li {
+		padding-bottom: 25px;
 	}
 
 	nav>div .reg li {
@@ -171,3 +210,39 @@ nav ul li a:hover {
 }
 
 /* Header End */
+/* Mina Start */
+main .container {
+	padding-top: var(--mainPadding);
+}
+
+main .home_banner {
+	position: relative;
+}
+
+main .home_banner img {
+	width: 100%;
+	height: 475px;
+	border-radius: var(--mainBroderRadius);
+	-webkit-border-radius: var(--mainBroderRadius);
+	-moz-border-radius: var(--mainBroderRadius);
+	-ms-border-radius: var(--mainBroderRadius);
+	-o-border-radius: var(--mainBroderRadius);
+}
+
+main .home_banner .circles {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50px);
+	color: white;
+	-webkit-transform: translateX(-50px);
+	-moz-transform: translateX(-50px);
+	-ms-transform: translateX(-50px);
+	-o-transform: translateX(-50px);
+}
+
+main .products {
+	padding-top: var(--mainPadding);
+}
+
+/* Mina end */
