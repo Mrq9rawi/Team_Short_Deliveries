@@ -4,7 +4,7 @@
 	--BCcolor: rgb(251, 244, 233, 70%);
 	--secondaryColor: #6A7464;
 	--productsBorder: #B38AA6;
-	--mainPadding: 75px;
+	--mainPadding: 50px;
 	--mainBroderRadius: 10px;
 }
 
@@ -59,7 +59,7 @@ body {
 	}
 }
 
-/* Start Components */
+/* Components Start*/
 .special_title {
 	width: 100%;
 	padding: 20px;
@@ -69,7 +69,7 @@ body {
 	-moz-border-radius: var(--mainBroderRadius);
 	-ms-border-radius: var(--mainBroderRadius);
 	-o-border-radius: var(--mainBroderRadius);
-	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .special_title>p {
@@ -77,7 +77,33 @@ body {
 	color: white;
 }
 
-/* End Components */
+/* Products Section */
+
+.products-section .products {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+	grid-gap: 13px;
+	padding-top: calc(var(--mainPadding) - 25px);
+}
+
+.products-section .products img {
+	width: 275px;
+	height: 187px;
+	border: 2px solid var(--productsBorder);
+	border-radius: var(--mainBroderRadius);
+	-webkit-border-radius: var(--mainBroderRadius);
+	-moz-border-radius: var(--mainBroderRadius);
+	-ms-border-radius: var(--mainBroderRadius);
+	-o-border-radius: var(--mainBroderRadius);
+}
+
+.products-section .products img+p {
+	text-align: center;
+	padding-top: 10px;
+	font-weight: 500;
+}
+
+/* Components End */
 
 /* Header Start */
 header {
@@ -210,7 +236,7 @@ nav ul li a:hover {
 }
 
 /* Header End */
-/* Mina Start */
+/* Main Start */
 main .container {
 	padding-top: var(--mainPadding);
 }
@@ -229,6 +255,33 @@ main .home_banner img {
 	-o-border-radius: var(--mainBroderRadius);
 }
 
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: .4
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: .4
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
 main .home_banner .circles {
 	position: absolute;
 	bottom: 10px;
@@ -241,8 +294,8 @@ main .home_banner .circles {
 	-o-transform: translateX(-50px);
 }
 
-main .products {
+main .products-section {
 	padding-top: var(--mainPadding);
 }
 
-/* Mina end */
+/* Main End */
