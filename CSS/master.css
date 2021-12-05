@@ -132,98 +132,45 @@ nav>div {
 	justify-content: space-evenly;
 }
 
-nav>div .fas.fa-bars {
-	display: none;
-}
-
-@media (max-width: 767px) {
-	nav>div {
-		justify-content: flex-end;
-	}
-
-	nav>div .fas.fa-bars {
-		display: block;
-	}
+nav>div {
+	justify-content: flex-end;
 }
 
 nav>div ul {
+	display: none;
 	list-style-type: none;
-	display: flex;
-	gap: 20px;
-	align-items: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
-
-nav>div .reg {
-	gap: 5px;
-}
-
 
 nav ul li {
 	font-size: 25px;
 }
 
-nav>div .reg li {
-	font-size: 12px;
+nav>div .fas.fa-bars:hover+ul {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 115%;
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+	background-color: var(--BCcolor);
 }
 
-@media (max-width: 991px) {
-	nav ul li {
-		font-size: 20px;
-	}
-
-	nav>div .reg li {
-		font-size: 10px;
-	}
+nav>div ul li {
+	padding-top: 25px;
+	position: relative;
 }
 
-@media (max-width: 767px) {
-	nav>div ul {
-		display: none;
-	}
-
-	nav>div .fas.fa-bars:hover+ul,
-	nav>div .fas.fa-bars:hover+ul+ul {
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 100%;
-		width: 100%;
-		text-align: center;
-		z-index: 2;
-		background-color: var(--BCcolor);
-	}
-
-	nav>div .fas.fa-bars:hover+ul+ul {
-		top: 243.5%;
-		z-index: 1;
-	}
-
-	nav>div ul li {
-		padding-top: 25px;
-		position: relative;
-	}
-
-	nav>div ul li:not(.reg li:last-child):after {
-		content: "";
-		background-color: black;
-		width: 100%;
-		height: 3px;
-		position: absolute;
-		bottom: -12.5px;
-		left: 0;
-	}
-
-	nav>div ul .pip-line+li {
-		padding-bottom: 25px;
-	}
-
-	nav>div .reg li {
-		font-size: 20px;
-	}
-
-	nav>div ul .pip-line {
-		display: none;
-	}
+nav>div ul li:not(:last-child)::after {
+	content: "";
+	background-color: black;
+	width: 100%;
+	height: 3px;
+	position: absolute;
+	bottom: -12.5px;
+	left: 0;
 }
 
 nav ul li a {
@@ -292,6 +239,10 @@ main .home_banner .circles {
 	-moz-transform: translateX(-50px);
 	-ms-transform: translateX(-50px);
 	-o-transform: translateX(-50px);
+}
+
+main .home_banner .circles i {
+	cursor: pointer;
 }
 
 main .products-section {
