@@ -1,11 +1,12 @@
-document.getElementById("burgerIcon").onclick = function () {
-	document.getElementById("navigation").style.display = "block";
-	document.getElementById("burgerIcon2").style.display = "block";
-	document.getElementById("burgerIcon").style.display = "none";
-};
+let navigation = document.getElementById("navigation");
 
-document.getElementById("burgerIcon2").onclick = function () {
-	document.getElementById("navigation").style.display = "none";
-	document.getElementById("burgerIcon2").style.display = "none";
-	document.getElementById("burgerIcon").style.display = "block";
+let timesClicked = 0;
+
+document.getElementById("burgerIcon").onclick = function () {
+	timesClicked++;
+	if (timesClicked % 2 !== 0) {
+		navigation.style.display = "block";
+	} else {
+		navigation.style.display = "none";
+	}
 };
