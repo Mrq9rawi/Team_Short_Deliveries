@@ -136,19 +136,12 @@ nav>div {
 	justify-content: flex-end;
 }
 
-nav>div ul {
+#burgerIcon2 {
 	display: none;
-	list-style-type: none;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
-nav ul li {
-	font-size: 25px;
-}
-
-nav>div .fas.fa-bars:hover+ul {
-	display: block;
+.navigation {
+	display: none;
 	position: absolute;
 	left: 0;
 	top: 115%;
@@ -156,6 +149,13 @@ nav>div .fas.fa-bars:hover+ul {
 	text-align: center;
 	z-index: 2;
 	background-color: var(--BCcolor);
+	list-style-type: none;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+nav ul li {
+	font-size: 25px;
 }
 
 nav>div ul li {
