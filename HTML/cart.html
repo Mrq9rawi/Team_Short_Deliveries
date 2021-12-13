@@ -50,11 +50,11 @@
 	<main>
 		<div class="product-summary">
 			<form action="checkout.php">
-				<label>Product Summary:</label>
-				<input type="text" id="product_summary" required>
-				<label>Total Cost:</label>
+				<label>Product Summary:</label><br>
+				<input type="text" id="product_summary" required><br>
+				<label>Total Cost:</label><br>
 				<!-- <input type="number" pattern="\{d2}.\{d2}" id="total_cost" name="total_cost" required> -->
-				<input type="text" id="total_cost" name="total_cost" required>
+				<input type="text" id="total_cost" name="total_cost" required><br>
 				<script>
 					if (window.localStorage.getItem("product")) {
 						document.querySelector("main .product-summary").append(document.createElement("p"))
@@ -64,6 +64,7 @@
 							"cost")
 					}
 				</script>
+				<input type="submit" value="Go to Checkout">
 			</form>
 		</div>
 	</main>
