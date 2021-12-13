@@ -16,6 +16,8 @@
     <body>
         <?php
             require('/Database+SQL/database.php');
+            $email = $_POST['email'];
+            $password = $_POST['password'];
         ?>
     </body>
 </html>

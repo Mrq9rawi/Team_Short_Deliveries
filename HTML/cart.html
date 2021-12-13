@@ -56,6 +56,12 @@
 					document.querySelector("main .product-summary p").textContent += window.localStorage.getItem("product")
 				}
 			</script>
+			<form action="checkout.php">
+				<label>Product Summary:</label>
+				<input type="text" id="product_summary" required>
+				<label>Total Cost:</label>
+				<input type="number" pattern="\{d2}.\{d2}" id="total_cost" name="total_cost" required>
+			</form>
 		</div>
 	</main>
 </body>
