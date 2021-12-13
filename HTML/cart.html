@@ -49,16 +49,16 @@
 	<!-- Header End -->
 	<main>
 		<div class="product-summary">
-			<p>You have </p>
-			<script>
-				if (window.localStorage.getItem("product")) {
-					document.querySelector("main .product-summary").append(document.createElement("p"))
-					document.querySelector("main .product-summary p").textContent += window.localStorage.getItem("product")
-				}
-			</script>
 			<form action="checkout.php">
 				<label>Product Summary:</label>
 				<input type="text" id="product_summary" required>
+				<script>
+					if (window.localStorage.getItem("product")) {
+						document.querySelector("main .product-summary").append(document.createElement("p"))
+						document.querySelector("main .product-summary form #product_summary").value += window.localStorage.getItem(
+							"product")
+					}
+				</script>
 				<label>Total Cost:</label>
 				<input type="number" pattern="\{d2}.\{d2}" id="total_cost" name="total_cost" required>
 			</form>
