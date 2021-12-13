@@ -99,19 +99,19 @@
 				<div class="products">
 					<div>
 						<img src="../images/pexels-angele-j-128420.jpg" alt="">
-						<p>Zucchini</p>
+						<p>Zucchini $5</p>
 					</div>
 					<div>
 						<img src="../images/pexels-abdul-sameer-7641473.jpg" alt="">
-						<p>Yellow Mango</p>
+						<p>Yellow Mango $3</p>
 					</div>
 					<div>
 						<img src="../images/pexels-karolina-grabowska-4963963.jpg" alt="">
-						<p>Peas</p>
+						<p>Peas $1</p>
 					</div>
 					<div>
 						<img src="../images/pexels-pixabay-326005.jpg" alt="">
-						<p>Macintosh Apples</p>
+						<p>Macintosh Apples $1</p>
 					</div>
 				</div>
 			</section>
@@ -165,7 +165,8 @@
 				let productName = document.querySelectorAll(".products>div p");
 				productName.forEach(function (ele) {
 					ele.addEventListener("click", function () {
-						window.localStorage.setItem("product", ele.textContent);
+						window.localStorage.setItem("product", ele.textContent.slice(0, ele.textContent.indexOf("$")));
+						window.localStorage.setItem("cost", ele.textContent.slice(ele.textContent.indexOf("$")));
 						window.alert(`(${ele.textContent}) Has been added to your cart`);
 					});
 				});
