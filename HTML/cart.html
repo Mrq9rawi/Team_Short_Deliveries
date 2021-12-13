@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- CSS Files -->
+	<!-- Normalizer -->
+	<link rel="stylesheet" href="../CSS/normalize.css">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="../CSS/all.min.css">
+	<!-- MainCSSFile -->
+	<link rel="stylesheet" href="../CSS/master.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+</head>
+
+<body>
+	<!-- Header Start -->
+	<header>
+		<div class="container">
+			<nav>
+				<a href="index.html">
+					<img src="../images/Team_Short_Deliveries_logo.png" alt="">
+				</a>
+				<div>
+					<i class="fas fa-bars fa-2x" id="burgerIcon"></i>
+					<ul id="navigation" class="navigation">
+						<li><a href="cart.html">Cart</a></li>
+						<li><a href="account.html">Sign In | Sign Up</a></li>
+					</ul>
+				</div>
+				<script>
+					let navigation = document.getElementById("navigation");
+
+					let timesClicked = 0;
+
+					document.getElementById("burgerIcon").onclick = function () {
+						timesClicked++;
+						if (timesClicked % 2 !== 0) {
+							navigation.style.display = "block";
+						} else {
+							navigation.style.display = "none";
+						}
+					};
+				</script>
+			</nav>
+		</div>
+	</header>
+	<!-- Header End -->
+	<main>
+		<div class="product-summary">
+			<p>You have </p>
+			<script>
+				if (window.localStorage.getItem("product")) {
+					document.querySelector("main .product-summary").append(document.createElement("p"))
+					document.querySelector("main .product-summary p").textContent += window.localStorage.getItem("product")
+				}
+			</script>
+		</div>
+	</main>
+</body>
+
+</html>

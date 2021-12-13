@@ -29,6 +29,20 @@
 						<li><a href="account.html">Sign In | Sign Up</a></li>
 					</ul>
 				</div>
+				<script>
+					let navigation = document.getElementById("navigation");
+
+					let timesClicked = 0;
+
+					document.getElementById("burgerIcon").onclick = function () {
+						timesClicked++;
+						if (timesClicked % 2 !== 0) {
+							navigation.style.display = "block";
+						} else {
+							navigation.style.display = "none";
+						}
+					};
+				</script>
 			</nav>
 		</div>
 	</header>
@@ -45,6 +59,38 @@
 					<i class="far fa-circle" onclick="currentSlide(2)"></i>
 					<i class="far fa-circle" onclick="currentSlide(3)"></i>
 				</div>
+				<script>
+					let slideIndex = 1;
+					slider(slideIndex);
+
+					function nextSlide(n) {
+						slider(slideIndex += n);
+					}
+
+					function currentSlide(n) {
+						slider(slideIndex = n);
+					}
+
+					function slider(n) {
+						let i;
+						let slides = document.getElementsByClassName("imgSlide");
+						let dots = document.getElementsByClassName("far fa-circle");
+						if (n > slides.length) {
+							slideIndex = 1;
+						}
+						if (n < 1) {
+							slideIndex = slides.length;
+						}
+						for (let i = 0; i < slides.length; i++) {
+							slides[i].style.display = "none";
+						}
+						for (let i = 0; i < dots.length; i++) {
+							dots[i].className = dots[i].className.replace(" fas fa-circle", "");
+						}
+						slides[slideIndex - 1].style.display = "block";
+						dots[slideIndex - 1].className += " fas fa-circle";
+					}
+				</script>
 			</div>
 			<section class="products-section">
 				<div class="special_title">
@@ -117,9 +163,8 @@
 			</section>
 		</div>
 	</main>
-	<!-- Mina End -->
-	<script src="/JS/homeBanner.js"></script>
-	<script src="/JS/navigation.js"></script>
+	<!-- Main End -->
+	<script src="/JS/products.js"></script>
 </body>
 
 </html>

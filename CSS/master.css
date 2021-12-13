@@ -136,8 +136,8 @@ nav>div {
 	justify-content: flex-end;
 }
 
-#burgerIcon2 {
-	display: none;
+#burgerIcon {
+	cursor: pointer;
 }
 
 .navigation {
@@ -242,6 +242,10 @@ main .home_banner .circles {
 }
 
 main .home_banner .circles i {
+	cursor: pointer;
+}
+
+.products>div p {
 	cursor: pointer;
 }
 
