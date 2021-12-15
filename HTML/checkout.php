@@ -39,7 +39,7 @@
                 $product_summary = $_POST['product_summary'];
                 $total_cost = $_POST['total_cost'];
 
-                if (header("what's your order, $name?")) {
+                if (header("What's your order, $name?")) {
                     $product_summary_input = set_string($db_connect, $product_summary);
                     $total_cost_input = set_string($db_connect, $total_cost);
 
