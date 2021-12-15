@@ -73,7 +73,7 @@
                         $order_input = mysqli_stmt_execute($user_order_input);
                         
                         if ($order_input) {
-                            $ijq = "SELECT Name FROM Registration INNER JOIN Products ON Registration.UserID = Products.UserID WHERE Name=$name";
+                            $ijq = "SELECT Name FROM Registration OUTER JOIN Products ON Registration.UserID = Products.UserID WHERE Name=$name";
                             $order_and_receipt_result = $db -> query($ijq);
                             echo "<p>Thank you for your order, $name! Your receipt number: $receipt_number. Your order will be arrive on $delivery_date.</p>";
                         }
