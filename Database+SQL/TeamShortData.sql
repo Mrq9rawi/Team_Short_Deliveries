@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
   `ProductID` int NOT NULL,
   `ProductCombination` varchar(45) DEFAULT NULL,
-  `TotalProductCost` int DEFAULT NULL,
+  `TotalProductCost` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ProductID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
