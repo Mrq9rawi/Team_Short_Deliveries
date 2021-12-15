@@ -15,8 +15,45 @@
     </head>
     <body>
         <?php
-            require('/Database+SQL/database.php');
-            
+            require('../Database+SQL/database.php');
+            $card_info = $_POST['card_info'];
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$street = $_POST['street'];
+			$city = $_POST['city'];
+			$province = $_POST['province'];
+			$password = $_POST['confirm_password'];
+
+			$name_input = set_string($db_connect, $name);
+            $email_input = set_string($db_connect, $email);
+            $street_input = set_string($db_connect, $street);
+			$city_input = set_string($db_connect, $city);
+			$province_input = set_string($db_connect, $province);
+			$hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $s = "INSERT INTO RegisteredLogin(CardInfo, Name, Email, Street, City, Province, PostalCode ) VALUES (?,?,?,?,?,?,?)";
+
+            $user_register_input = mysqli_prepare($db_connect, $s);
+
+            mysqli_stmt_bind_param(
+                $user_register_input,
+                'sssssss',
+				$card_info,
+                $name_input,
+                $email_input,
+                $street_input,
+				$city_input,
+				$province_input,
+				$hash
+            );
+
+            $input = mysqli_stmt_execute($user_register_input);
+            if ($input) {
+                header("What's your order, $name?");
+            }
+            else {
+                echo "<p>500. Internal error. Please try again later.</p>";
+            }
         ?>
     </body>
 </html>
