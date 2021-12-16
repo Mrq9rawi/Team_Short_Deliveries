@@ -254,3 +254,29 @@ main .products-section {
 }
 
 /* Main End */
+
+.container.account {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	background-color: var(--secondaryColor);
+	color: white;
+	height: 500px;
+	text-align: center;
+}
+
+.container.account summary {
+	cursor: pointer;
+	width: 211px;
+	margin-bottom: 20px;
+}
+
+.container.cart {
+	background-color: var(--secondaryColor);
+	color: white;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}

@@ -48,24 +48,26 @@
 	</header>
 	<!-- Header End -->
 	<main>
-		<div class="product-summary">
-			<form action="checkout.php">
-				<label>Product Summary:</label><br>
-				<input type="text" id="product_summary" required><br>
-				<label>Total Cost:</label><br>
-				<!-- <input type="number" pattern="\{d2}.\{d2}" id="total_cost" name="total_cost" required> -->
-				<input type="text" id="total_cost" name="total_cost" required><br>
-				<script>
-					if (window.localStorage.getItem("product")) {
-						document.querySelector("main .product-summary").append(document.createElement("p"))
-						document.querySelector("main .product-summary form #product_summary").value = window.localStorage.getItem(
-							"product")
-						document.querySelector("main .product-summary form #total_cost").value = window.localStorage.getItem(
-							"cost")
-					}
-				</script>
-				<input type="submit" value="Go to Checkout">
-			</form>
+		<div class="container cart">
+			<div class="product-summary">
+				<form action="checkout.php">
+					<label>Product Summary:</label><br>
+					<input type="text" id="product_summary" required><br>
+					<label>Total Cost:</label><br>
+					<!-- <input type="number" pattern="\{d2}.\{d2}" id="total_cost" name="total_cost" required> -->
+					<input type="text" id="total_cost" name="total_cost" required disabled="disabled"><br>
+					<script>
+						if (window.localStorage.getItem("product")) {
+							document.querySelector("main .product-summary").append(document.createElement("p"))
+							document.querySelector("main .product-summary form #product_summary").value = window.localStorage.getItem(
+								"product")
+							document.querySelector("main .product-summary form #total_cost").value = window.localStorage.getItem(
+								"cost")
+						}
+					</script>
+					<input type="submit" value="Go to Checkout">
+				</form>
+			</div>
 		</div>
 	</main>
 </body>
