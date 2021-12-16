@@ -257,18 +257,67 @@ main .products-section {
 
 .container.account {
 	display: flex;
-	justify-content: center;
 	gap: 50px;
 	background-color: var(--secondaryColor);
 	color: white;
 	height: 500px;
 	text-align: center;
+	margin-top: 50px;
 }
 
 .container.account summary {
 	cursor: pointer;
 	width: 211px;
 	margin-bottom: 20px;
+}
+
+.container.account details:first-of-type summary {
+	cursor: pointer;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+.container.account details:first-of-type form {
+	display: grid;
+	grid-template: repeat(2, auto) / repeat(2, auto);
+	gap: 20px;
+}
+
+.container.account details:first-of-type form>div {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.container.account details:first-of-type form>section {
+	grid-column: span 2;
+	display: flex;
+	justify-content: center;
+}
+
+.container.account details:first-of-type form>section input {
+	width: 200px;
+	background-color: var(--mainColor);
+	color: white;
+	cursor: pointer;
+}
+
+.container.account details:last-of-type form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.container.account details:last-of-type form input[type="submit"] {
+	background-color: var(--mainColor);
+	color: white;
+	cursor: pointer;
+}
+
+.container.account details form input {
+	border-radius: 10px;
+	border: none;
+	padding: 10px 20px;
 }
 
 .container.cart {
