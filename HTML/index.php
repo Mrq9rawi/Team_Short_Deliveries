@@ -23,6 +23,7 @@
 				echo "<h4>Logged in: {$_SESSION['username']}</h4>";
 			}
 			else {
+				echo "<h4>Error. Your login session is not loaded. Please remember to allow cookies.</h4>";
 				session_destroy();
 			}
 		?>
