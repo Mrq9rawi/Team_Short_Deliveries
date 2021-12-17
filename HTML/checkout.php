@@ -38,8 +38,9 @@
                 $receipt_number = rand(1000,9000);
                 $product_summary = $_POST['product_summary'];
                 $total_cost = $_POST['total_cost'];
+                session_start();
 
-                if (header("location:index.php")) {
+                if (isset($_SESSION['username'])) {
                     $product_summary_input = set_string($db_connect, $product_summary);
                     $total_cost_input = set_string($db_connect, $total_cost);
 
@@ -92,7 +93,7 @@
                     }
                 }
                 else {
-                    echo "<h4>You don't have a login. In order to do an order, you need to either sign in or sign up <a href='account.html'>here</a>.</h4>";
+                    echo "<h4>You aren't logged in. In order to do an order, you need to either sign in or sign up <a href='account.html'>here</a>.</h4>";
                 }
 
             ?>
