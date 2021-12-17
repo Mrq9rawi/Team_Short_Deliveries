@@ -18,7 +18,7 @@
 	<!-- Header Start -->
 	<header>
 		<?php
-			require "database.php";
+			require ("../Database+SQL/database.php");
 			require "login.php";
 			session_start();
 			echo "<h4>Logged in: $email</h4>";
