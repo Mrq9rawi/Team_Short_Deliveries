@@ -20,6 +20,7 @@
             $password = $_POST['password'];
 			$email_input = set_string($db_connect, $email);
 			$hash = password_hash($password, PASSWORD_DEFAULT);
+			session_start();
 			
 			$sql= "SELECT * FROM `TeamShortData`.`Registration` WHERE Email='$email_input'AND password='$hash'";
 			$result = $db_connect -> query($sql);
