@@ -19,7 +19,12 @@
 	<header>
 		<?php
 			session_start();
-			echo "<h4>Logged in: {$_SESSION['username']}</h4>";
+			if (isset($_SESSION['username'])) {
+				echo "<h4>Logged in: {$_SESSION['username']}</h4>";
+			}
+			else {
+				session_destroy();
+			}
 		?>
 		<div class="container">
 			<nav>
