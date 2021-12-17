@@ -16,13 +16,14 @@
     <body>
         <?php
             require('../Database+SQL/database.php');
+			include('registration.php');
             $email = $_POST['email'];
             $password = $_POST['password'];
 			
-			$sql= "SELECT `TeamShortData`.`Registration` WHERE Email='$email'AND password='password_verify($password, $hash)'";
+			$sql= "SELECT `TeamShortData`.`Registration` WHERE Email='$email'AND password='$hash'";
 			$result = $db_connect -> query($sql);
-			if ($result) {
-				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email' AND password='password_verify($password, $hash)'";
+			if ($result && password_verify($password, $hash)) {
+				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email' AND password='$hash'";
 				$name = $db_connect -> query($sql_result);
 				$_SESSION['username'] = $email;
 				echo "<h4>Hello $name! You'll be going to the home page in a moment!</h4>";
