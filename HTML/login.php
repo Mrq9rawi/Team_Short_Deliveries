@@ -15,7 +15,7 @@
     </head>
     <body>
         <?php
-            require_once('../Database+SQL/database.php');
+            require_once('database.php');
             $email = $_POST['email'];
             $password = $_POST['password'];
 			$email_input = set_string($db_connect, $email);

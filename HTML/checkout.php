@@ -31,8 +31,8 @@
         </header>
         <main>
             <?php
-                require "../Database+SQL/database.php";
-                include "registration.php";
+                require_once( "database.php");
+                include_once ("registration.php");
                 date_default_timezone_set('EST');
                 $delivery_date = mktime(0,0,0,date("m"),date("d")+7,date("Y"));
                 $receipt_number = rand(1000,9000);

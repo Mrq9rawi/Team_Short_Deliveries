@@ -15,7 +15,7 @@
     </head>
     <body>
         <?php
-            require('../Database+SQL/database.php');
+            require('database.php');
             $card_info = $_POST['card_info'];
 			$name = $_POST['name'];
 			$email = $_POST['email'];
