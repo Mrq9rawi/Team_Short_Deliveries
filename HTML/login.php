@@ -20,10 +20,12 @@
             $password = $_POST['password'];
 			
 			$sql= "SELECT `TeamShortData`.`Registration` WHERE Email='$email'AND password='password_verify($password, $hash)'";
-			$result = $db -> query($sql);
+			$result = $db_connect -> query($sql);
 			if ($result) {
 				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email' AND password='password_verify($password, $hash)'";
-				$name = $db -> query($sql_result);
+				$name = $db_connect -> query($sql_result);
+				$_SESSION['username'] = $email;
+				echo "<h4>Hello $name! You'll be going to the home page in a moment!</h4>";
 				header("location:index.php");
 			}
 			else if ($email != $result) {

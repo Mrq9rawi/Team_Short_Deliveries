@@ -17,6 +17,12 @@
 <body>
 	<!-- Header Start -->
 	<header>
+		<?php
+			require "database.php";
+			require "login.php";
+			session_start();
+			echo "<h4>Logged in: $email</h4>";
+		?>
 		<div class="container">
 			<nav>
 				<a href="index.html">
