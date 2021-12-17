@@ -52,7 +52,7 @@
 
             $input = mysqli_stmt_execute($user_register_input);
             if ($input) {
-                header("What's your order, $name?");
+                header("location:index.html");
             }
             else {
                 echo "<p>500. Internal error. Please try again later.</p>";
