@@ -30,7 +30,7 @@
 				echo "<h4>Hello $name! You'll be going to the home page in a moment!</h4>";
 				header("location:index.php");
 			}
-			else if ($email != $result) {
+			else if ($email_input != $result) {
 				echo "<h4>$email is not registered. Please go to registration <a href='account.html>here</a>.</h4>";
 			}
 			else if (!password_verify($password, $hash) || password_verify($password, $hash) != $result) {
