@@ -16,9 +16,9 @@
     <body>
         <?php
             require_once('../Database+SQL/database.php');
-			include('registration.php');
             $email = $_POST['email'];
             $password = $_POST['password'];
+			$email_input = set_string($db_connect, $email);
 			
 			$sql= "SELECT `TeamShortData`.`Registration` WHERE Email='$email_input'AND password='$hash'";
 			$result = $db_connect -> query($sql);
