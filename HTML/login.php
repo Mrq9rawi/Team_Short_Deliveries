@@ -21,7 +21,7 @@
 			$email_input = set_string($db_connect, $email);
 			$hash = password_hash($password, PASSWORD_DEFAULT);
 			
-			$sql= "SELECT `TeamShortData`.`Registration` WHERE Email='$email_input'AND password='$hash'";
+			$sql= "SELECT * FROM `TeamShortData`.`Registration` WHERE Email='$email_input'AND password='$hash'";
 			$result = $db_connect -> query($sql);
 			if ($result && password_verify($password, $hash)) {
 				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email_input' AND password='$hash'";
@@ -30,7 +30,7 @@
 				echo "<h4>Hello $name! You'll be going to the home page in a moment!</h4>";
 				header("location:index.php");
 			}
-			else if (!$result[$email_input]) {
+			else if ($result['Email'] != $email_input) {
 				echo "<h4>$email is not registered. Please go to registration <a href='account.html>here</a>.</h4>";
 			}
 			else if (!password_verify($password, $hash) || password_verify($password, $hash) != $result) {
