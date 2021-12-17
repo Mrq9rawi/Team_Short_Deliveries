@@ -19,10 +19,10 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 			
-			$sql= "SELECT `TeamShortData`.`RegisteredLogin` WHERE Email='$email'AND password='password_verify($password, $hash)'";
+			$sql= "SELECT `TeamShortData`.`RegisteredLogin` WHERE Email='$email'AND password='password_verify($password, $hash_input)'";
 			$result = $db -> query($sql);
 			if ($result) {
-				$sql_result = "SELECT Name FROM `TeamShortData`.`RegisteredLogin` WHERE Email='$email' AND password='password_verify($password, $hash)'";
+				$sql_result = "SELECT Name FROM `TeamShortData`.`RegisteredLogin` WHERE Email='$email' AND password='password_verify($password, $hash_input)'";
 				$name = $db -> query($sql_result);
 				header("What's your order, $name?");
 			}
