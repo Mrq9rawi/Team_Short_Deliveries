@@ -32,11 +32,11 @@
         <main>
             <?php
                 require_once( "database.php");
+                $product_summary = $_POST['product_summary'];
+                $total_cost = $_POST['total_cost'];
                 date_default_timezone_set('EST');
                 $delivery_date = mktime(0,0,0,date("m"),date("d")+7,date("Y"));
                 $receipt_number = rand(1000,9000);
-                $product_summary = $_POST['product_summary'];
-                $total_cost = $_POST['total_cost'];
                 session_start();
 
                 if (isset($_SESSION['username'])) {
@@ -57,7 +57,6 @@
                     $product_input = mysqli_stmt_execute($user_product_input);
                     if ($product_input) {
                         $delivery_date_input = set_string($db_connect, $delivery_date);
-                        $receipt_number_input = set_string($db_connect, $receipt_number);
 
                         $sq = "INSERT INTO Order(DeliveryDate, ReceiptNo) VALUES (?,?)";
 
@@ -67,7 +66,7 @@
                             $user_order_input,
                             'ss',
                             $delivery_date_input,
-                            $receipt_number_input
+                            $receipt_number
                         );
 
                         $order_input = mysqli_stmt_execute($user_order_input);

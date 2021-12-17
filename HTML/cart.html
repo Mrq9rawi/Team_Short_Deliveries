@@ -53,11 +53,11 @@
 				<form action="checkout.php" method="POST">
 					<div>
 						<label>Product Summary:</label>
-						<input type="text" id="product_summary" name="product_summary" required>
+						<input type="text" id="product_summary" name="product_summary" required disabled="disabled">
 					</div>
 					<div>
 						<label>Total Cost:</label>
-						<input type="text" id="total_cost" name="total_cost" required>
+						<input type="text" id="total_cost" name="total_cost" required disabled="disabled">
 					</div>
 					<script>
 						if (window.localStorage.getItem("product")) {
@@ -68,7 +68,7 @@
 								"cost")
 						}
 					</script>
-					<input type="submit" value="Go to Checkout">
+					<input type="submit" formmethod="POST" value="Go to Checkout">
 				</form>
 			</div>
 		</div>
