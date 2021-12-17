@@ -15,7 +15,7 @@
     </head>
     <body>
         <?php
-            require('../Database+SQL/database.php');
+            require_once('../Database+SQL/database.php');
 			include('registration.php');
             $email = $_POST['email'];
             $password = $_POST['password'];
