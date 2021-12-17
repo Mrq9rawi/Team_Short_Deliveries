@@ -18,8 +18,6 @@
 	<!-- Header Start -->
 	<header>
 		<?php
-			require_once ("database.php");
-			require_once ("login.php");
 			session_start();
 			echo "<h4>Logged in: $email</h4>";
 		?>
