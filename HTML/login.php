@@ -24,11 +24,8 @@
 			$sql= "SELECT * FROM `TeamShortData`.`Registration` WHERE Email='$email_input'AND password='$hash'";
 			$result = $db_connect -> query($sql);
 			if ($result && password_verify($password, $hash)) {
-				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email_input' AND password='$hash'";
-				$name = $db_connect -> query($sql_result);
-				$name_string = trim($name);
 				$_SESSION['username'] = $email;
-				echo "<h4>Hello $name_string! You'll be going to the home page in a moment!</h4>";
+				echo "<h4>Success! You'll be going to the home page in a moment!</h4>";
 				header("location:index.php");
 			}
 			else if ($result['Email'] != $email_input) {
