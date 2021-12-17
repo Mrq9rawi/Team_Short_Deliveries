@@ -11,7 +11,7 @@
 	    <!-- MainCSSFile -->
 	    <link rel="stylesheet" href="../CSS/master.css">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Home Page</title>
+	    <title>Registration</title>
     </head>
     <body>
         <?php
@@ -52,10 +52,11 @@
 
             $input = mysqli_stmt_execute($user_register_input);
             if ($input) {
-                header("location:index.html");
+                echo "<h4>Congratulations! You have signed up for the site! You will be redirected to the account page to Sign In.</h4>";
+                header("location:account.html");
             }
             else {
-                echo "<p>500. Internal error. Please try again later.</p>";
+                echo "<h4>500. Internal error. Please try again later.</h4>";
             }
         ?>
     </body>

@@ -39,7 +39,7 @@
                 $product_summary = $_POST['product_summary'];
                 $total_cost = $_POST['total_cost'];
 
-                if (header("What's your order, $name?")) {
+                if (header("location:index.php")) {
                     $product_summary_input = set_string($db_connect, $product_summary);
                     $total_cost_input = set_string($db_connect, $total_cost);
 
@@ -76,23 +76,23 @@
                             $ijq = "SELECT Name FROM Registration OUTER JOIN Products ON Registration.UserID = Products.UserID WHERE Name=$name";
                             $order_and_receipt_result = $db -> query($ijq);
                             if ($order_and_receipt_result) {
-                                echo "<p>Thank you for your order, $name! Your receipt number: $receipt_number. Your order will be arrive on $delivery_date.</p>";
+                                echo "<h4>Thank you for your order, $name! Your receipt number: $receipt_number. Your order will be arrive on $delivery_date.</h4>";
                             }
                             else {
-                                echo "<p>500. Internal error. Please try again later.</p>";
+                                echo "<h4>500. Internal error. Please try again later.</h4>";
                             }
                         }
                         else {
-                            echo "<p>500. Internal error. Please try again later.</p>";
+                            echo "<h4>500. Internal error. Please try again later.</h4>";
                         }                       
 
                     }
                     else {
-                        echo "<p>500. Internal error. Please try again later.</p>";
+                        echo "<h4>500. Internal error. Please try again later.</h4>";
                     }
                 }
                 else {
-                    echo "<p>You don't have a login. In order to do an order, you need to either sign in or sign up <a href='account.html'>here</a>.</p>";
+                    echo "<h4>You don't have a login. In order to do an order, you need to either sign in or sign up <a href='account.html'>here</a>.</h4>";
                 }
 
             ?>
