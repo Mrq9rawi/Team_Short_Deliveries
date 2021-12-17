@@ -44,7 +44,7 @@
                     $product_summary_input = set_string($db_connect, $product_summary);
                     $total_cost_input = set_string($db_connect, $total_cost);
 
-                    $s = "INSERT INTO Products(ProductCombination,TotalProduct,Cost) VALUES (?,?)";
+                    $s = "INSERT INTO Products(ProductCombination,TotalProductCost) VALUES (?,?)";
 
                     $user_product_input = mysqli_prepare($db_connect, $s);
 
