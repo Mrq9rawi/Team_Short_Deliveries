@@ -22,6 +22,7 @@
 			$street = $_POST['street'];
 			$city = $_POST['city'];
 			$province = $_POST['province'];
+            $postal_code = $_POST['postal_code'];
 			$password = $_POST['confirm_password'];
 
 			$name_input = set_string($db_connect, $name);
@@ -30,8 +31,7 @@
 			$city_input = set_string($db_connect, $city);
 			$province_input = set_string($db_connect, $province);
 			$hash = password_hash($password, PASSWORD_DEFAULT);
-
-            $s = "INSERT INTO RegisteredLogin(CardInfo, Name, Email, Street, City, Province, PostalCode ) VALUES (?,?,?,?,?,?,?)";
+            $s = "INSERT INTO RegisteredLogin(CardInfo, Name, Email, Street, City, Province, PostalCode, Password) VALUES (?,?,?,?,?,?,?,?)";
 
             $user_register_input = mysqli_prepare($db_connect, $s);
 
@@ -43,6 +43,7 @@
                 $email_input,
                 $street_input,
 				$city_input,
+                $postal_code,
 				$province_input,
 				$hash
             );
