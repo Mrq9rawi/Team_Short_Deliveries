@@ -76,7 +76,7 @@
                             $ijq = "SELECT Name FROM Registration OUTER JOIN Products ON Registration.UserID = Products.UserID WHERE Name=$name";
                             $order_and_receipt_result = $db -> query($ijq);
                             if ($order_and_receipt_result) {
-                                echo "<h4>Thank you for your order, $name! Your receipt number: $receipt_number. Your order will be arrive on $delivery_date.</h4>";
+                                echo "<h4>Thank you for your order! Your receipt number: $receipt_number. Your order will be arrive on $delivery_date.</h4>";
                             }
                             else {
                                 echo "<h4>500. Internal error. Please try again later.</h4>";
