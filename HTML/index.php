@@ -19,7 +19,7 @@
 	<header>
 		<?php
 			session_start();
-			echo "<h4>Logged in: $email</h4>";
+			echo "<h4>Logged in: {$_SESSION['username']}</h4>";
 		?>
 		<div class="container">
 			<nav>
