@@ -24,7 +24,7 @@
 			if ($result) {
 				$sql_result = "SELECT Name FROM `TeamShortData`.`Registration` WHERE Email='$email' AND password='password_verify($password, $hash)'";
 				$name = $db -> query($sql_result);
-				header("What's your order, $name?");
+				header("location:index.html");
 			}
 			else if ($email != $result) {
 				echo "<p>$email is not registered. Please go to registration <a href='account.html>here</a>.</p>";
